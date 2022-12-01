@@ -13,6 +13,8 @@ class Game:
         self.window = Window(WIDTH, HEIGHT)
         self.snake = Snake()
         self.food = Food()
+        self.player_score = 0
+        self.high_score = 0
 
     def RunGame(self):
         while True:
@@ -36,6 +38,7 @@ class Game:
     def world_update(self):
         if self.snake.snake_head.distance(self.food.item) < 15:
             self.food.set_move(True)
+            self.player_score += 10
             self.snake.grow()
 
         condition1 = self.snake.snake_head.xcor() > RIGHT
@@ -55,6 +58,6 @@ class Game:
             # self.snake.snake_head.goto(0, 0)
             # self.snake.snake_head.direction = "stop"
             # self.snake.clear_body()
-        
+            self.window.drawHUD(self.player_score)
 game = Game()
 game.RunGame()

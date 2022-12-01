@@ -88,7 +88,7 @@ class Food:
         self.item = turtle.Turtle()
         self.item.speed(0)
         self.item.shape("circle")
-        self.item.color("red")
+        self.item.color("blue")
         self.item.penup()
         self.item.shapesize(0.50, 0.50)
         self.item.goto(0, 0)
