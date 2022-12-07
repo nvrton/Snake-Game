@@ -1,6 +1,6 @@
 import turtle 
 import random
-
+from Window import *
 class Snake:
 
     def __init__(self):
@@ -18,8 +18,9 @@ class Snake:
 
     def move(self):
         for i in range(len(self.snake_body)-1, 0, -1):
-            x = self.snake_body[i-1].xcor()
-            y = self.snake_body[i-1].ycor()
+            x = self.snake_body[i - 1].xcor()
+            y = self.snake_body[i - 1].ycor()
+
             self.snake_body[i].goto(x, y)
         
         if self.snake_body != []:
@@ -57,16 +58,21 @@ class Snake:
         part = turtle.Turtle()
         part.speed(0)
         part.shape("square")
-        part.color("black")
+        part.color("yellow")
         part.penup()
         self.snake_body.append(part)
+        for i in range(len(self.snake_body)-1, 0, -1):
+            x = self.snake_body[i - 1].xcor()
+            y = self.snake_body[i - 1].ycor()
+
+            self.snake_body[i].goto(x, y)
 
     def update(self):
         self.move()
     
     # def clear_body(self):
     #     for part in self.snake_body:
-    #         part.goto(1000, 1000)
+    #         part.hideturtle()
     #     self.snake_body = []
 
     def snake_die(self):
@@ -86,13 +92,18 @@ class Food:
 
     def __init__(self):
         self.item = turtle.Turtle()
+        self.InitialiseFood()
+
+    def InitialiseFood(self):
         self.item.speed(0)
         self.item.shape("circle")
         self.item.color("blue")
         self.item.penup()
         self.item.shapesize(0.50, 0.50)
         self.item.goto(0, 0)
-        self.move = False
+        self.move = True
+        self.relocate()
+       
 
     def set_move(self, decision):
         self.move = decision

@@ -13,6 +13,7 @@ class Game:
         self.window = Window(WIDTH, HEIGHT)
         self.snake = Snake()
         self.food = Food()
+        self.window.drawHUD(score=0, highScore=0)
         self.player_score = 0
         self.high_score = 0
 
@@ -38,8 +39,15 @@ class Game:
     def world_update(self):
         if self.snake.snake_head.distance(self.food.item) < 15:
             self.food.set_move(True)
-            self.player_score += 10
             self.snake.grow()
+            self.player_score += 10
+            ## PROBLEM 2 ##
+            if self.player_score > self.high_score:
+                self.high_score = self.player_score 
+                self.window.drawHUD(score=self.player_score, highScore=self.high_score)
+            else:
+                self.window.drawHUD(score=self.player_score, highScore=self.high_score) 
+            
 
         condition1 = self.snake.snake_head.xcor() > RIGHT
         condition2 = self.snake.snake_head.xcor() < LEFT
@@ -52,12 +60,17 @@ class Game:
             # self.snake.snake_head.goto(0, 0)
             # self.snake.snake_head.direction = "stop"
             # self.snake.clear_body()
+            ## PROBLEM 1 ##
+            self.player_score = 0 
+            self.window.drawHUD(self.player_score, self.high_score) 
         if self.snake.head_and_body_coll_check() == True:
             time.sleep(1)
             self.snake.snake_die()
             # self.snake.snake_head.goto(0, 0)
             # self.snake.snake_head.direction = "stop"
             # self.snake.clear_body()
-            self.window.drawHUD(self.player_score)
+            ## PROBLEM 1 ##
+            self.player_score = 0 
+            self.window.drawHUD(self.player_score, self.high_score) 
 game = Game()
 game.RunGame()
