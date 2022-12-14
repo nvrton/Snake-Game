@@ -1,3 +1,12 @@
+##
+The code for the four PowerPoints is in the three seperate Python Files, followed exactly as said (when correct). If the PowerPoints remove a section of code and rewrite it (for example, the sections upon snake death) 
+then the old code has been commented and new code placed in. 
+
+Following the PowerPoints exactly doesn't seem to produce a working program, so follow the tips outlined below if things aren't working. You may not get some of these issues, but if you do then the solutions are here. 
+
+The fourth PowerPoint outlines two things to fix at the end, these are labelled as Problem 1 and 2 below and have ##PROBLEM X## above them in the code to identify where they are. 
+## 
+
 Tips to follow the PowerPoint
 
 - Read the PowerPoint. Tempting to just copy code, but saves so much time and effort if you just follow the PowerPoint. 
