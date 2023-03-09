@@ -1,3 +1,5 @@
+![python image](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
 ##
 The code for the four PowerPoints is in the three seperate Python Files, followed exactly as said (when correct). If the PowerPoints remove a section of code and rewrite it (for example, the sections upon snake death) 
 then the old code has been commented and new code placed in. 
@@ -7,7 +9,7 @@ Following the PowerPoints exactly doesn't seem to produce a working program, so 
 The fourth PowerPoint outlines two things to fix at the end, these are labelled as Problem 1 and 2 below and have ##PROBLEM X## above them in the code to identify where they are. 
 ## 
 
-Tips to follow the PowerPoint
+## Tips to follow the PowerPoint
 
 - Read the PowerPoint. Tempting to just copy code, but saves so much time and effort if you just follow the PowerPoint. 
 - First PowerPoint has the completed code in the last slide. When they get to a point where the code you've written is correct, but nothing runs, check these and find the section that actually runs the code in the World file at bottom of Game class. It doesn't tell you to include it. 
@@ -24,17 +26,17 @@ along with placing:
             y = self.snake_body[i - 1].ycor()
 
             self.snake_body[i].goto(x, y)
-at bottom of def grow() in snake class. The body part still appears in centre of screen on the first eat, but otherwise works. 
+At bottom of def grow() in snake class. The body part still appears in centre of screen on the first eat, but otherwise works. 
 
 If anyone ever fixes this properly ^^ or finds better solutions, get in touch: 16nethertonj@student.cleeveschool.net
 
 
-PROBLEMS SOLVED (end of ppt 4)
+## PROBLEMS SOLVED (end of ppt 4)
 
-(##PROBLEM 1##) 1- To reset the score to zero whenever user dies, put self.player_score = 0 and redraw the hud, setting score perameter to self.player_score (line of code should be: self.window.drawHUD(self.player_score)) in both conditions of death function.
+##PROBLEM 1## 1- To reset the score to zero whenever user dies, put self.player_score = 0 and redraw the hud, setting score perameter to self.player_score (line of code should be: self.window.drawHUD(self.player_score)) in both conditions of death function.
 
 
-(##PROBLEM 2##) 2- FROM:  self.hud.write(("Score:  %d High Score: 0" %(score), align="center", font=("Courier", 22, "normal")) ---->> TO:  self.hud.write(("Score:  %d High Score: %d" %(score, highScore)), align="center", font=("Courier", 22, "normal")) in Window class
+##PROBLEM 2## 2- FROM:  self.hud.write(("Score:  %d High Score: 0" %(score), align="center", font=("Courier", 22, "normal")) ---->> TO:  self.hud.write(("Score:  %d High Score: %d" %(score, highScore)), align="center", font=("Courier", 22, "normal")) in Window class
 - if self.player_score > self.high_score:
     self.high_score = self.player_score 
     self.window.drawHUD(score=self.player_score, highScore=self.high_score)
